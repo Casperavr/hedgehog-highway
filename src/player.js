@@ -1,6 +1,6 @@
 class Player{
     constructor(){
-        this.positionX = 10; //windowDimensions.width / 100 * 
+        this.positionX = 54.7;
         this.positionY = 5;
         this.width = 12;
         this.height = 20;
@@ -33,7 +33,7 @@ class Player{
     }
 
     moveRight(){
-        if(this.positionX < 90){
+        if(this.positionX < 88){
             this.positionX += 1.5;
             this.hedgieElement.style.left = `${this.positionX}%`;
             this.hedgieElement.style.transform = "rotate(20deg)"
@@ -46,31 +46,30 @@ class Player{
     }
 
     moveUp(){
-        if(this.positionY < 65){
-            this.positionY += 1;
+        if(this.positionY < 80){
+            this.positionY += 1.5;
             this.hedgieElement.style.bottom = `${this.positionY}%`;
         }
     }
 
     moveDown(){
         if(this.positionY > 0){
-            this.positionY -= 1;
+            this.positionY -= 1.5;
             this.hedgieElement.style.bottom = `${this.positionY}%`;
         }
     }
 
     hasDied(scoreCounter){
 
-        clearInterval(gameTick);
+        this.roadSpeed = document.getElementById("board")
+        this.roadSpeed.style.animationDuration = "0s";
+
 
         if(scoreCounter > localStorage.getItem("highscore")){
             localStorage.setItem("highscore", scoreCounter);
         }
 
         setTimeout(() => {
-
-            this.scoreElement.remove();
-
             this.deathScreenElement = document.createElement("div");
             this.deathScreenElement.id = "gameover";
             const bodyElement = document.getElementsByTagName("body")[0];

@@ -1,8 +1,8 @@
 class Obstacle{
     constructor(lanePos, dimensions, speed){
         //car
-        this.positionX = lanePos; // 29 {2 8 2 8 2 8 2 8 2} 29 // 31 : 41 ; 51 : 61
-        this.positionY = 120;      // 6 19 33 46
+        this.positionX = lanePos;
+        this.positionY = 120;
         this.width = dimensions.width;
         this.height = dimensions.height;
         this.speed = speed;
@@ -21,6 +21,29 @@ class Obstacle{
         
         const boardElement = document.getElementById("board");
         boardElement.appendChild(this.carElement);
+
+        this.carImage = document.createElement("img")
+        this.carImage.className = "car-image"
+        if(this.width === 18 && this.positionX > 40){
+            this.carImage.src = "./src/img/truck.png"
+            this.carImage.style.transform = "rotate(0deg)"
+        }
+        if(this.width === 18 && this.positionX < 40){
+            this.carImage.src = "./src/img/truck.png"
+            this.carImage.style.transform = "rotate(180deg)"
+        }
+        if(this.width === 13 && this.positionX > 40){
+            this.carImage.src = "./src/img/car.png"
+            this.carImage.style.transform = "rotate(0deg)" 
+        }
+        if(this.width === 13 && this.positionX < 40){
+            this.carImage.src = "./src/img/car.png"
+            this.carImage.style.transform = "rotate(180deg)" 
+        }
+        if(this.width === 10){
+            this.carImage.src = "./src/img/lca-shield.gif"
+        }
+        this.carElement.appendChild(this.carImage)
     }
 
     moveDown(){

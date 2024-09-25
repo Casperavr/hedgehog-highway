@@ -40,26 +40,73 @@ h1{
     justify-content: center;
     background-image: url("../src/img/pixil-frame-0 (1)_scaled_2x_pngcrushed (1) - Copy.png");
     background-size: contain;
-    animation: moveIt 300s linear infinite;
+    animation: moveBackground 0.3s linear infinite;
 }
 
 #title {
     text-align: center;
 }
 
-#hedgie{
-    background-color: black;
+#score {
     position: absolute;
-    background-image: url("../src/img/hedgiecar_scaled_14x_pngcrushed.png");
+    margin-bottom: 50vh;
+    width: auto;
+    height: 10vh;
+    z-index: 10;
+    display: flex;
+}
+
+.scoreNumber {
+    display: flex;
+    height: 100%;
+}
+
+#shields {
+    position: absolute;
+    margin-bottom: 70vh;
+    margin-left: 91vh;
+    width: auto;
+    height: 10vh;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+}
+
+.shieldNumber {
+    display: flex;
+    height: 100%;
+    margin-bottom: 1vh;
+}
+
+#hedgie{
+    /* background-color: aqua; */
+    position: absolute;
+    background-image: url("../src/img/peter.png");
     background-size: contain;
 }
 
-.car-div{
-    background-color: blueviolet;
+#gameover{
     position: absolute;
+    background-color: white;
+    padding: 10px;
+    border: 2px black solid;
+    border-radius: 10%;
+    margin-bottom: 50vh;
+    z-index: 11;
+    text-align: center;
 }
 
-@keyframes moveIt {
-    from {background-position: top}
-    to {background-position: bottom}
+.car-div{
+    /* background-color: aqua; */
+    position: absolute;  
+}
+
+.car-image {
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes moveBackground {
+    0% {background-position: 0 0}
+    100% {background-position: 0 100%}
 }
