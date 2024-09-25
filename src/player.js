@@ -76,7 +76,7 @@ class Player{
             bodyElement.appendChild(this.deathScreenElement);
 
             this.deathMessageElement = document.createElement("h2");
-            this.deathMessageElement.innerText = "Game Over";
+            this.deathMessageElement.innerText = "You let Peter die.";
             this.deathScreenElement.appendChild(this.deathMessageElement);
 
             this.finalScoreElement = document.createElement("h3");
